@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONUS Internal Tools</title>
+  <meta name="description" content="One place to open ONUS warehouse tools.">
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 12px rgba(0,0,0,.04);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --card: #131a2e;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #232c45;
+        --accent: #818cf8;
+        --accent-soft: #1e2547;
+        --amber: #fbbf24;
+        --amber-soft: #3a2c0c;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 32px 16px 48px; }
+    header h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+    header p { margin: 4px 0 0; color: var(--muted); }
+    .search {
+      margin: 20px 0 24px;
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      font: inherit;
+    }
+    .search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .tool {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .tool-head { display: flex; gap: 12px; align-items: center; }
+    .icon {
+      width: 44px; height: 44px; flex: none;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 22px;
+    }
+    .tool h2 { margin: 0; font-size: 18px; }
+    .tool p { margin: 0; color: var(--muted); }
+    a.open {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 11px 14px;
+      border-radius: 10px;
+    }
+    a.open:hover { filter: brightness(1.08); }
+    ul.links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    ul.links a {
+      display: flex; justify-content: space-between; gap: 8px;
+      text-decoration: none; color: var(--text);
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    ul.links a:hover { border-color: var(--accent); color: var(--accent); }
+    ul.links a span { color: var(--muted); font-size: 13px; }
+    .tag {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+      padding: 2px 6px; border-radius: 6px;
+      background: var(--amber-soft); color: var(--amber);
+    }
+    .empty { display: none; color: var(--muted); text-align: center; padding: 24px; }
+    footer { margin-top: 32px; color: var(--muted); font-size: 13px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ONUS Internal Tools</h1>
+      <p>Open the warehouse apps from one place. Bookmark this page.</p>
+    </header>
+
+    <input class="search" id="search" type="search" placeholder="Search tools (e.g. cycle count, staging, dashboard)" aria-label="Search tools">
+
+    <main class="grid" id="tools">
+      <!-- To add a tool, copy one <section class="tool"> block and change its text and links. -->
+
+      <section class="tool" data-keywords="cyclecount cycle count inventory audit pda tc56 monitor">
+        <div class="tool-head">
+          <div class="icon" aria-hidden="true">📦</div>
+          <div>
+            <h2>CycleCount Pro</h2>
+            <p>Cycle counts and inventory audits on the TC56 PDA.</p>
+          </div>
+        </div>
+        <a class="open" href="https://xperia888.github.io/CycleCountPro/" target="_blank" rel="noopener">Open CycleCount Pro</a>
+        <ul class="links">
+          <li><a href="https://xperia888.github.io/CycleCountPro/monitor.html" target="_blank" rel="noopener">Monitoring Center <span>monitor</span></a></li>
+        </ul>
+      </section>
+
+      <section class="tool" data-keywords="outbound staging pallet lanes slp board dashboard tv intake orders chino ont">
+        <div class="tool-head">
+          <div class="icon" aria-hidden="true">🚚</div>
+          <div>
+            <h2>Outbound Staging</h2>
+            <p>Outbound pallet staging lanes, loading doors and orders.</p>
+          </div>
+        </div>
+        <a class="open" href="https://xperia888.github.io/outbound-stage-manager/" target="_blank" rel="noopener">Open Staging Manager</a>
+        <ul class="links">
+          <li><a href="https://xperia888.github.io/outbound-stage-manager/?wh=CHINO" target="_blank" rel="noopener">Staging Manager, Chino <span class="tag">Chino</span></a></li>
+          <li><a href="https://xperia888.github.io/outbound-stage-manager/dashboard.html" target="_blank" rel="noopener">Live TV Dashboard <span>read-only</span></a></li>
+          <li><a href="https://xperia888.github.io/outbound-stage-manager/intake.html" target="_blank" rel="noopener">Order Intake <span>customer service</span></a></li>
+        </ul>
+      </section>
+    </main>
+
+    <p class="empty" id="empty">No tools match your search.</p>
+
+    <footer>Some apps ask for an access code the first time you open them on a device.</footer>
+  </div>
+
+  <script>
+    const search = document.getElementById('search');
+    const tools = Array.from(document.querySelectorAll('.tool'));
+    const empty = document.getElementById('empty');
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      let shown = 0;
+      tools.forEach(t => {
+        const hay = (t.textContent + ' ' + (t.dataset.keywords || '')).toLowerCase();
+        const match = !q || hay.includes(q);
+        t.style.display = match ? '' : 'none';
+        if (match) shown++;
+      });
+      empty.style.display = shown ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
