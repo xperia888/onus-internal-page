@@ -8,6 +8,8 @@ One page that links to the ONUS internal warehouse tools, so staff only need one
 |---|---|
 | CycleCount Pro | https://xperia888.github.io/CycleCountPro/ (Monitoring Center: `monitor.html`) |
 | Outbound Staging | https://xperia888.github.io/outbound-stage-manager/ (Chino, TV dashboard, Order Intake) |
+| Inbound Sorting | https://xperia888.github.io/inbound-sorting-tool/ |
+| ZPL Studio | https://xperia888.github.io/ZPL-studio/ |
 
 ## Adding a tool
 
